@@ -125,12 +125,23 @@
       @foreach($chunk as $item)
       <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3" style="margin-top: 50px;">
         <div class="box-team wow bounceInUp" data-wow-delay="0.1s">
-          <img src="{{$item->image}}" alt="" class="img-circle img-responsive" style="height:300px; width:100%;"/>
-          <div class="super-paragraph" style="min-height: 50px; padding-top: 20px; text-transform: uppercase; line-height: 1.2; font-size: 20px; font-weight: bold;"><p>{{$item->title}}</p></div>
-          <button data-toggle="collapse" class="btn btn-theme" data-target="#{{$item->id}}">Ver más</button>
-          <div id="{{$item->id}}" class="collapse text-left" style="padding-top: 20px;">
-            <div class="col-md-12"> 
-              {!!$item->caption!!}
+          <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+            <div class="mainflip">
+              <div class="frontside">
+                <div class="card">
+                  <div class="card-body text-center">
+                    <img src="{{$item->image}}" alt="" class="img-thumbnail img-responsive" style="height:300px; width:100%;"/>
+                    <div class="super-paragraph" style="min-height: 50px; padding-top: 20px; text-transform: uppercase; line-height: 1.2; font-size: 20px; font-weight: bold;"><p>{{$item->title}}</p></div>
+                  </div>
+                </div>
+              </div>
+              <div class="backside">
+                <div class="card">
+                  <div class="card-body text-justify mt-4">
+                    <p class="card-text">{!!$item->caption!!}</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

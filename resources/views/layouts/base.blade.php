@@ -9,7 +9,7 @@
   <meta name="author" content="">
   <meta name="csrf-token" content="{{ csrf_token() }}">
   
-  <title>Lipocero</title>
+  <title>D-Uñas y Pies</title>
 
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,300,700,800" rel="stylesheet" media="screen">
 
