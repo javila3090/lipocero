@@ -27,7 +27,8 @@ class HomeController extends Controller
         
         //Mapa
         $config = array();
-        $config['center'] = '-33.434844,-70.626295';
+        $config['center'] = '-33.454140,-70.846818';
+        $config['zoom'] = 15;
         $config['onboundschanged'] = 'if (!centreGot) {
             var mapCentre = map.getCenter();
             marker_0.setOptions({

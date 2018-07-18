@@ -5,7 +5,7 @@
 {!! $map['map_js'] !!}
 
 <!-- About -->
-<section id="nosotros" class="home-section bg-white">
+<section id="nosotros" class="home-section bg-gray">
   <div class="container">
     <div class="row">
       <div class="col-md-offset-2 col-md-8">
@@ -75,10 +75,10 @@
         </div>
       </div>
     </div>
-    @foreach ($servicesBanners->chunk(4) as $chunk)
+    @foreach ($servicesBanners->chunk(3) as $chunk)
     <div class="row">
       @foreach($chunk as $item)
-      <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 desktop" style="margin-top: 50px;">
+      <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 desktop" style="margin-top: 50px;">
         <div class="box-team wow fadeInRightBig" data-wow-delay="0.1s">
           <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
             <div class="mainflip">
@@ -246,7 +246,7 @@
         </form>
 
       </div>
-      <div class="col-md-6 rotateInUpRight box-shadow">
+      <div class="col-md-6 rotateInUpRight">
         {!! $map['map_html'] !!} 
       </div>
     </div>
@@ -272,7 +272,7 @@
           <i class="fa fa-phone fa-3x"></i>
           <h5>Teléfonos</h5>
           <p>
-            +{{$companyInfo->phone_1}}<br />+{{$companyInfo->phone_2}}
+            {{$companyInfo->phone_1}}<br />{{$companyInfo->phone_2}}
           </p>
         </div>
       </div>
