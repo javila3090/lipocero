@@ -5,79 +5,34 @@
 {!! $map['map_js'] !!}
 
 <!-- About -->
-<section id="nosotros" class="home-section bg-gray">
+<section id="nosotros" class="home-section bg-white">
   <div class="container">
     <div class="row">
       <div class="col-md-offset-2 col-md-8">
         <div class="section-heading">
-          <h2>{{$aboutUs->title}}</h2>
+          <h2 class="title-color">{{$aboutUs->title}}</h2>
           <div class="heading-line"></div>
           <p>{{$aboutUs->subtitle}}</p>
         </div>
       </div>
     </div>
     <div class="row">
-      <div class="col-md-6 about-img wow bounceInDown">
-        <img src="{{$aboutUs->image}}" alt="" class="img img-responsive img-thumbnail swing wow" data-wow-delay="1s">
+      <div class="col-md-6 col-xs-12 content wow bounceInUp" data-wow-delay="0.7s">
+        <div class="content">
+          <p>
+            {!!$aboutUs->content!!}
+          </p>
+          <p>
+            {!!$companyInfo->review!!}
+          </p>
+        </div>      
       </div>
-      <div class="col-md-6 content wow bounceInUp desktop" data-wow-delay="0.7s">
-        @if($companyInfo->review && $aboutUs->content)
-        <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-          <div class="mainflip">
-            <div class="frontside">
-              <div class="card">
-                <div class="card-body text-center">
-                  <p class="card-text"> {!!$aboutUs->content!!}</p>
-                </div>
-              </div>
-            </div>
-            <div class="backside">
-              <div class="card">
-                <div class="card-body text-center mt-4">
-                  <p class="card-text">{!!$companyInfo->review!!}</p>                  
-                </div>
-              </div>
-            </div>
+      <div class="col-md-6 col-xs-12 about-img wow flipInX" style="padding: 10px;">
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1">
+            <img src="{{$aboutUs->image}}" alt="" class="img img-responsive img-circle tada wow text-center box-shadow" data-wow-delay="1s">
           </div>
         </div>
-        @elseif($aboutUs->content)
-        <div class="content">
-          <p>
-            {!!$aboutUs->content!!}
-          </p>
-        </div>
-        @else
-        <div class="content">
-          <p>
-            {!!$companyInfo->review!!}
-          </p>
-        </div>
-        @endif
-      </div>
-
-      <div class="col-md-6 content wow bounceInUp responsive" data-wow-delay="0.7s">
-        @if($companyInfo->review && $aboutUs->content)
-        <div class="content">
-          <p>
-            {!!$aboutUs->content!!}
-          </p>
-          <p>
-            {!!$companyInfo->review!!}
-          </p>
-        </div>
-        @elseif($aboutUs->content)
-        <div class="content">
-          <p>
-            {!!$aboutUs->content!!}
-          </p>
-        </div>
-        @else
-        <div class="content">
-          <p>
-            {!!$companyInfo->review!!}
-          </p>
-        </div>
-        @endif
       </div>
     </div>
   </div>
@@ -115,7 +70,7 @@
     <div class="row">
       <div class="col-md-offset-2 col-md-8">
         <div class="section-heading">
-          <h2>{{$services->title}}</h2>
+          <h2 class="title-color">{{$services->title}}</h2>
           <div class="heading-line"></div>            
         </div>
       </div>
@@ -123,21 +78,21 @@
     @foreach ($servicesBanners->chunk(4) as $chunk)
     <div class="row">
       @foreach($chunk as $item)
-      <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3" style="margin-top: 50px;">
-        <div class="box-team wow bounceInUp" data-wow-delay="0.1s">
+      <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 desktop" style="margin-top: 50px;">
+        <div class="box-team wow fadeInRightBig" data-wow-delay="0.1s">
           <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
             <div class="mainflip">
               <div class="frontside">
-                <div class="card">
-                  <div class="card-body text-center">
+                <div class="box">
+                  <div class="box-content text-center">
                     <img src="{{$item->image}}" alt="" class="img-thumbnail img-responsive" style="height:300px; width:100%;"/>
                     <div class="super-paragraph" style="min-height: 50px; padding-top: 20px; text-transform: uppercase; line-height: 1.2; font-size: 20px; font-weight: bold;"><p>{{$item->title}}</p></div>
                   </div>
                 </div>
               </div>
               <div class="backside">
-                <div class="card">
-                  <div class="card-body text-justify mt-4">
+                <div class="box box-backside">
+                  <div class="box-content text-left mt-4">
                     <p class="card-text">{!!$item->caption!!}</p>
                   </div>
                 </div>
@@ -146,6 +101,22 @@
           </div>
         </div>
       </div>
+
+      <!-- Responsive -->
+
+      <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 responsive" style="margin-top: 50px;">
+        <div class="box-team wow bounceInUp" data-wow-delay="0.1s">
+          <img src="{{$item->image}}" alt="" class="img-thumbnail img-responsive" style="height:300px; width:100%;"/>
+          <div class="super-paragraph" style="min-height: 50px; padding-top: 20px; text-transform: uppercase; line-height: 1.2; font-size: 20px; font-weight: bold;"><p>{{$item->title}}</p></div>
+          <button data-toggle="collapse" class="btn btn-theme" data-target="#{{$item->id}}">Ver más</button>
+          <div id="{{$item->id}}" class="collapse text-left" style="padding-top: 20px;">
+            <div class="col-md-12"> 
+              {!!$item->caption!!}
+            </div>
+          </div>
+        </div>
+      </div>
+
       @endforeach
     </div>
     @endforeach
@@ -158,7 +129,7 @@
     <div class="row">
       <div class="col-md-offset-2 col-md-8">
         <div class="section-heading">
-          <h2>{{$gallery->title}}</h2>
+          <h2 class="title-color">{{$gallery->title}}</h2>
           <div class="heading-line"></div>
           <p>{{$gallery->subtitle}}</p>
         </div>
@@ -194,7 +165,7 @@
     <div class="row">
       <div class="col-md-offset-2 col-md-8">
         <div class="section-heading">
-          <h2>{{$promotions->title}}</h2>
+          <h2 class="title-color">{{$promotions->title}}</h2>
           <div class="heading-line"></div>
           <p>{{$promotions->subtitle}}</p>
         </div>
@@ -221,7 +192,7 @@
     <div class="row">
       <div class="col-md-offset-2 col-md-8">
         <div class="section-heading">
-          <h2>{{$contact->title}}</h2>
+          <h2 class="title-color">{{$contact->title}}</h2>
           <div class="heading-line"></div>
           <h3>{{$contact->subtitle}}</h3>
         </div>
@@ -238,7 +209,7 @@
         </div>
         <div id="errormessage"></div>
 
-        <form action="" method="post" class="form-horizontal contactForm" role="form">
+        <form action="" method="post" class="form-horizontal contactForm zoomIn" role="form">
           <div class="col-md-offset-2 col-md-8">
             <div class="form-group">
               <input type="text" name="name" class="form-control" id="name" placeholder="Su nombre" data-rule="minlen:4" data-msg="Por favor ingrese al menos 4 carácteres" />
@@ -275,7 +246,7 @@
         </form>
 
       </div>
-      <div class="col-md-6">
+      <div class="col-md-6 rotateInUpRight box-shadow">
         {!! $map['map_html'] !!} 
       </div>
     </div>
@@ -288,8 +259,8 @@
   <div class="container">
     <div class="row">
       <div class="col-md-4">
-        <div class="contact-widget wow bounceInLeft">
-          <i class="fa fa-map-marker fa-4x"></i>
+        <div class="contact-widget wow bounceInLeft well box-shadow" style="min-height: 200px;">
+          <i class="fa fa-map-marker fa-3x"></i>
           <h5>Dirección</h5>
           <p>
             {{$companyInfo->address}}
@@ -297,8 +268,8 @@
         </div>
       </div>
       <div class="col-md-4">
-        <div class="contact-widget wow bounceInUp">
-          <i class="fa fa-phone fa-4x"></i>
+        <div class="contact-widget wow bounceInUp well box-shadow" style="min-height: 200px;">
+          <i class="fa fa-phone fa-3x"></i>
           <h5>Teléfonos</h5>
           <p>
             +{{$companyInfo->phone_1}}<br />+{{$companyInfo->phone_2}}
@@ -306,10 +277,10 @@
         </div>
       </div>
       <div class="col-md-4">
-        <div class="contact-widget wow bounceInRight">
-          <i class="fa fa-envelope fa-4x"></i>
+        <div class="contact-widget wow bounceInRight well box-shadow" style="min-height: 200px;">
+          <i class="fa fa-envelope fa-3x"></i>
           <h5>Correo electrónico</h5>
-          <p>
+          <p >
             {{$companyInfo->email_1}}<br />{{$companyInfo->email_2}}
           </p>
         </div>

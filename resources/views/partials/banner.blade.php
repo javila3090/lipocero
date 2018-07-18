@@ -17,9 +17,11 @@
                 <h1 class="super-heading wow bounceInDown" data-wow-delay="0.5s">{{$v->title}}</h1>
                 <h1 class="super-heading wow bounceInLeft" data-wow-delay="1s">{{$v->subtitle}}</h1>
                 <br/>
-                <div class="wow bounceInRight" data-wow-delay="1s">
-                    <p class="super-paragraph">{!!$v->caption!!}</p>
+                @if($v->caption!='<p>&nbsp;</p>')
+                <div class="wow bounceInRight" data-wow-delay="1s" style="background-color: #569a9d;">
+                    <p class="super-paragraph" >{!!$v->caption!!}</p>
                 </div>
+                @endif
                 @if($v->button)
                 <br/>
                 <div class="wow rollIn" data-wow-delay="1.5s">

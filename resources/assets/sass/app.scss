@@ -21,24 +21,20 @@ Imports
 General
 ================================= */
 
+
 @font-face {
-  font-family: 'Josefin Sans Light';
-  src: url(/fonts/JosefinSans-Light.ttf);
+  font-family: 'Philosopher Regular';
+  src: url(/fonts/Philosopher-Regular.ttf);
 }
 
 @font-face {
-  font-family: 'Josefin Sans Regular';
-  src: url(/fonts/JosefinSans-Regular.ttf);
+  font-family: 'Philosopher SemiBold';
+  src: url(/fonts/Philosopher-SemiBold.ttf);
 }
 
 @font-face {
-  font-family: 'Josefin Sans SemiBold';
-  src: url(/fonts/JosefinSans-SemiBold.ttf);
-}
-
-@font-face {
-  font-family: 'Josefin Sans Bold';
-  src: url(/fonts/JosefinSans-Bold.ttf);
+  font-family: 'Philosopher Bold';
+  src: url(/fonts/Philosopher-Bold.ttf);
 }
 
 @font-face {
@@ -51,10 +47,50 @@ General
   src: url(/fonts/Merienda-Regular.ttf);
 }
 
+@font-face {
+  font-family: 'ElMessiri Medium';
+  src: url(/fonts/ElMessiri-Medium.ttf);
+}
+
+@font-face {
+  font-family: 'ElMessiri Regular';
+  src: url(/fonts/ElMessiri-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'ElMessiri Bold';
+  src: url(/fonts/ElMessiri-Bold.ttf);
+}
+
+@font-face {
+  font-family: 'FrederickatheGreat Regular';
+  src: url(/fonts/FrederickatheGreat-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'Courgette Regular';
+  src: url(/fonts/Courgette-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'Kalam Light';
+  src: url(/fonts/Kalam-Light.ttf);
+}
+
+@font-face {
+  font-family: 'Kalam Regular';
+  src: url(/fonts/Kalam-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'Kalam Bold';
+  src: url(/fonts/Kalam-Bold.ttf);
+}
+
 
 body{
 	text-align: center;
-	font-family: 'Josefin Sans Regular', sans-serif;
+	font-family: 'Philosopher Regular', sans-serif;
 	font-size: 14px;
 	line-height: 1.6em;
 }
@@ -81,13 +117,19 @@ h6 {
 h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{
 	font-weight: 700;
 	margin-bottom: 20px;
-	font-family: 'Merienda Regular', sans-serif;
+	font-family: 'ElMessiri Regular', sans-serif;
 }
 .center {
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 50%;
+}
+
+.box-shadow{
+  -webkit-box-shadow: 3px 9px 25px -6px rgba(0,0,0,0.75);
+  -moz-box-shadow: 3px 9px 25px -6px rgba(0,0,0,0.75);
+  box-shadow: 3px 9px 25px -6px rgba(0,0,0,0.75);
 }
 
 .desktop{
@@ -185,6 +227,117 @@ h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{
 .frontside .card .card-title,
 .backside .card .card-title {
     color: #007b5e !important;
+}
+
+.box-backside {
+  background:#fff;
+  transition:all 0.2s ease;
+  box-sizing: border-box;
+  border-radius: 5px;
+  background-clip: padding-box;
+  padding:0 20px 20px 20px;
+  min-height:340px;
+}
+
+.aboutus-section {
+    padding: 90px 0;
+}
+.aboutus-title {
+    font-size: 30px;
+    letter-spacing: 0;
+    line-height: 32px;
+    margin: 0 0 39px;
+    padding: 0 0 11px;
+    position: relative;
+    text-transform: uppercase;
+    color: #000;
+}
+.aboutus-title::after {
+    background: #fdb801 none repeat scroll 0 0;
+    bottom: 0;
+    content: "";
+    height: 2px;
+    left: 0;
+    position: absolute;
+    width: 54px;
+}
+.aboutus-text {
+    color: #606060;
+    font-size: 13px;
+    line-height: 22px;
+    margin: 0 0 35px;
+}
+
+a:hover, a:active {
+    color: #ffb901;
+    text-decoration: none;
+    outline: 0;
+}
+.aboutus-more {
+    border: 1px solid #fdb801;
+    border-radius: 25px;
+    color: #fdb801;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0;
+    padding: 7px 20px;
+    text-transform: uppercase;
+}
+.feature .feature-box .iconset {
+    background: #fff none repeat scroll 0 0;
+    float: left;
+    position: relative;
+    width: 18%;
+}
+.feature .feature-box .iconset::after {
+    background: #fdb801 none repeat scroll 0 0;
+    content: "";
+    height: 150%;
+    left: 43%;
+    position: absolute;
+    top: 100%;
+    width: 1px;
+}
+
+.feature .feature-box .feature-content h4 {
+    color: #0f0f0f;
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: 22px;
+    margin: 0 0 5px;
+}
+
+
+.feature .feature-box .feature-content {
+    float: left;
+    padding-left: 28px;
+    width: 78%;
+}
+.feature .feature-box .feature-content h4 {
+    color: #0f0f0f;
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: 22px;
+    margin: 0 0 5px;
+}
+.feature .feature-box .feature-content p {
+    color: #606060;
+    font-size: 13px;
+    line-height: 22px;
+}
+.icon {
+    color : #f4b841;
+    padding:0px;
+    font-size:40px;
+    border: 1px solid #fdb801;
+    border-radius: 100px;
+    color: #fdb801;
+    font-size: 28px;
+    height: 70px;
+    line-height: 70px;
+    text-align: center;
+    width: 70px;
 }
 
 /* Tamaño Fuentes
@@ -394,7 +547,7 @@ nav.navbar.fixed-to-top{
   left: 0;
   width: 0%;
   height: 2px;
-  background-color: #007bff;
+  background-color: #569a9d;
   -webkit-transition: .4s ease;
   transition: .4s ease;
 }
@@ -405,10 +558,14 @@ nav.navbar.fixed-to-top{
 
 /* brand / logo */
 .navbar-default .navbar-brand{
-	color: #fff;
+	color: #569a9d;
 	text-transform: uppercase;
 	font-weight: 700;
 	font-size: 2em;
+}
+
+.title-color{
+  color: #569a9d;
 }
 
 /* ================================
@@ -488,14 +645,14 @@ h1,h2,h3,h4 {
 
 .super-heading {
     font-size: 70px;
-    font-family: 'Merienda Bold' !important;
+    font-family: 'Kalam Bold' !important;
 }
 
 
 .super-paragraph {
     font-size: 30px; 
     font-weight: 300;
-    font-family: 'Merienda Regular' !important;
+    font-family: 'Kalam Regular' !important;
 }
 
 .carousel-caption .super-paragraph a,
@@ -505,13 +662,21 @@ h1,h2,h3,h4 {
 }
 
 .carousel-caption p{
-	font-family: 'Merienda Regular' !important;
+	font-family: 'Kalam Regular' !important;
 	font-size: 26px !important;
 	line-height: 1.5 !important;
 }
 
 #carousel-example-generic {
     margin: 40px 0;
+}
+
+.carousel-indicators li{
+  border:2px solid #569a9d !important;
+}
+
+.carousel-indicators .active{
+  background-color: #569a9d !important;
 }
 
 .demo-content {padding-top: 50px; padding-bottom: 50px; }
@@ -532,7 +697,7 @@ h1,h2,h3,h4 {
 	display: block;
 	height: 1px;
 	width: 80px;
-	background: #333;
+	background: #569a9d;
 	margin-top: 10px;
 	margin-bottom: 20px;
 }

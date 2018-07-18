@@ -78,7 +78,7 @@
       });
       jQuery(document).ready(function($) {
         $('.custom1').owlCarousel({
-          animateIn: 'flipInX',
+          animateIn: 'rollIn',
           items: 1,
           margin: 30,
           stagePadding: 30,
